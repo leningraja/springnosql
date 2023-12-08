@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -19,10 +21,25 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Override
+	public List<User> findAll() {
+		return userRepository.findAll();
+	}
 
 	@Override
-	public List<User> getAllUsers() {
-		return userRepository.findAll();
+	public Page<User> findAll(Pageable paging) {
+		return userRepository.findAll(paging);
+	}
+	
+	@Override
+	public Page<User> findByStatus(boolean status, Pageable pageable){
+		return userRepository.findByStatus(status, pageable);
+	}
+	
+	@Override
+	public Page<User> findByNameContainingIgnoreCase(String name, Pageable pageable){
+		return userRepository.findByNameContainingIgnoreCase(name, pageable);
 	}
 
 	@Override
@@ -33,7 +50,7 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public List<User> getUserByName(String name) {
-		return userRepository.getUserByName(name);
+		return userRepository.findByNameContainingIgnoreCase(name);
 	}
 
 	@Override

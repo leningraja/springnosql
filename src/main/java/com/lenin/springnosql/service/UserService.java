@@ -3,11 +3,12 @@ package com.lenin.springnosql.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.lenin.springnosql.model.User;
 
 public interface UserService {
-
-	List<User> getAllUsers();
 
 	Optional<User> getUserById(String userId);
 
@@ -22,4 +23,12 @@ public interface UserService {
 	List<User> getUserByName(String name);
 
 	User updateUserStatus(String id, boolean status);
+
+	Page<User> findByStatus(boolean status, Pageable pageable);
+
+	Page<User> findByNameContainingIgnoreCase(String name, Pageable pageable);
+
+	Page<User> findAll(Pageable paging);
+
+	List<User> findAll();
 }

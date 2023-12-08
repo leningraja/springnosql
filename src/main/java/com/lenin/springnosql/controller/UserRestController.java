@@ -29,7 +29,7 @@ public class UserRestController {
 	@GetMapping()
 	public List<User> getAllUsers() {
 		log.info("Getting all users.");
-		return userService.getAllUsers();
+		return userService.findAll();
 	}
 
 	@GetMapping("/{userId}")
