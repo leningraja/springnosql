@@ -99,7 +99,7 @@ public class UserController {
 			redirectAttributes.addAttribute("message", e.getMessage());
 		}
 
-		return "redirect:/users";
+		return "redirect:/usersPaging";
 	}
 
 	@GetMapping("/user/edit/{id}")
@@ -114,7 +114,7 @@ public class UserController {
 		} catch (Exception e) {
 			redirectAttributes.addFlashAttribute("message", e.getMessage());
 
-			return "redirect:/users";
+			return "redirect:/usersPaging";
 		}
 	}
 
@@ -143,6 +143,6 @@ public class UserController {
 			redirectAttributes.addFlashAttribute("message", e.getMessage());
 		}
 
-		return "redirect:/users";
+		return "redirect:/usersPaging";
 	}
 }
