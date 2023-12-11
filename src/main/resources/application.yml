@@ -5,8 +5,5 @@ server:
 spring:
   data:
     mongodb:
-      database:testspringboot
-      port=27017
-      host=localhost
-#      uri:mongodb+srv://lenin:4Oc9DaHG0Tu0FzTn@lenindev.5d0bbys.mongodb.net/?retryWrites=true&w=majority
-#      database=springtest
+      uri: mongodb://localhost:27017/?retryWrites=true&w=majority
+      database: testspringboot

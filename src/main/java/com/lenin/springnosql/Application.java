@@ -15,11 +15,12 @@ import lombok.extern.slf4j.Slf4j;
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication application = new SpringApplication(Application.class);
-		application.setAdditionalProfiles("local");
-		application.run(args);
+		/*
+		 * SpringApplication application = new SpringApplication(Application.class);
+		 * application.setAdditionalProfiles("local"); application.run(args);
+		 */
 
-		// SpringApplication.run(Application.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 	
 	@Bean

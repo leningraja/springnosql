@@ -20,4 +20,4 @@ EXPOSE 3000
 #COPY --from=build /target/spring-mvc-login-okta-0.0.1-SNAPSHOT.jar app.jar
 
 # Command to run the Spring Boot application
-CMD ["java", "-jar", "target/springnosql-cloud.jar"]
+CMD ["java", "-Dspring.profiles.active=dev", "-jar", "target/springnosql-cloud.jar"]
