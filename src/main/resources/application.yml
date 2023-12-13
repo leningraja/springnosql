@@ -7,3 +7,9 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/?retryWrites=true&w=majority
       database: testspringboot
+      
+springsql:
+  app:
+    jwtSecret: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+    jwtCookieName: springsql
+    jwtExpirationMs: 86400000

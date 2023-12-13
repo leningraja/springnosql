@@ -42,7 +42,7 @@ public class UserRestController {
 	@PostMapping("/create")
 	public User addNewUsers(@RequestBody User user) {
 		log.info("Saving user.");
-		log.info("UserId: {} , Name: {}", user.getUserId(), user.getName());
+		log.info("UserId: {} , Name: {}", user.getUserId(), user.getUsername());
 		return userService.addNewUser(user);
 	}
 
