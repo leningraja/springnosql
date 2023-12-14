@@ -29,7 +29,6 @@ import com.lenin.springnosql.model.User;
 import com.lenin.springnosql.repository.RoleRepository;
 import com.lenin.springnosql.repository.UserRepository;
 import com.lenin.springnosql.security.jwt.JwtUtils;
-import com.lenin.springnosql.security.service.UserDetailsImpl;
 
 import jakarta.validation.Valid;
 
@@ -63,7 +62,7 @@ public class AuthController {
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		User userDetails = (User) authentication.getPrincipal();
 
 		ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
 

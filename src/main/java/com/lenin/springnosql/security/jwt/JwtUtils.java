@@ -11,7 +11,7 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
-import com.lenin.springnosql.security.service.UserDetailsImpl;
+import com.lenin.springnosql.model.User;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -43,7 +43,7 @@ public class JwtUtils {
 		}
 	}
 
-	public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {
+	public ResponseCookie generateJwtCookie(User userPrincipal) {
 		String jwt = generateTokenFromUsername(userPrincipal.getUsername());
 		ResponseCookie cookie = ResponseCookie.from(jwtCookie, jwt).path("/api").maxAge(24 * 60 * 60).httpOnly(true)
 				.build();
